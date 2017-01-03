@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===========================================================================
+
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+
+============================================================================-->
+<settings>
+<common>
+    <use_case value="2" type="dec"></use_case>
+    <modules type="array">
+         <value value="pproc"></value>
+    </modules>
+    <execute_params>
+        <!-- 0 - execute all, 1 - execute name, 2 - execute index, 3 - execute batch-->
+        <method value="3" type="tm_intf_execute_method_t"></method>
+        <index value="4" type="uint32_t"></index>
+        <name value="unit_test_2" type="string"></name>
+        <batch>
+            <num_indexes value="2" type="uint32_t"></num_indexes>
+            <indexes type="array">
+                 <value value="1"></value>
+                 <value value="0"></value>
+            </indexes>
+        </batch>
+    </execute_params>
+    <is_first_module_src value="0" type="boolean"></is_first_module_src>
+    <lib_name value="test_suite_pproc.so" type="string"></lib_name>
+    <session_id value="2" type="uint32_t"></session_id>
+    <!-- possible types: preview, postview, snapshot, video, offline-->
+    <stream_types type="array">
+        <stream_type value="offline" type="cam_stream_type_t"></stream_type>
+    </stream_types>
+    <!-- 0 - continuous, 1 - burst-->
+    <streaming_mode>
+        <mode value="1" type="cam_streaming_mode_t"></mode>
+    </streaming_mode>
+    <!-- should be 0 for continuous mode-->
+    <num_burst>
+        <num value="1" type="int"></num>
+    </num_burst>
+    <read_input_from_file value="1" type="boolean"></read_input_from_file>
+    <!-- 0 - will use native buffer as output, 1 - will allocate output buffer and use it-->
+    <use_out_buffer value="1" type="boolean"></use_out_buffer>
+    <input_filename type="string">
+        <name value="/data/inNV12.yuv"></name>
+    </input_filename>
+    <!-- possible formats: NV12, NV21-->
+    <input_format value="NV21" type="char"></input_format>
+    <outfile_path value="/data/misc/camera/" type="char"></outfile_path>
+    <have_ref_image value="0" type="boolean"></have_ref_image>
+    <ref_imgname value="/data/refNV12.yuv" type="string"></ref_imgname>
+    <chromatix_file value="/system/vendor/lib/libchromatix_imx214" type="string"></chromatix_file>
+    <!-- Number of frames to skip before saving output file -->
+    <frames_skip value="0" type="dec"></frames_skip>
+    <frame_count value="1" type="dec"></frame_count>
+    <save_file value="1" type="dec"></save_file>
+    <uc_name value="ts2" type="string"></uc_name>
+</common>
+</settings>

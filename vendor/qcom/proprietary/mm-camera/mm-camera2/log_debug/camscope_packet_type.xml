@@ -1,0 +1,64 @@
+﻿<?xml version="1.0"?>
+<!-- ******************************************************************************* -->
+<!-- Copyright (c) 2016 Qualcomm Technologies, Inc.                                  -->
+<!-- All Rights Reserved.                                                            -->
+<!-- Confidential and Proprietary - Qualcomm Technologies, Inc.                      -->
+<!-- ******************************************************************************* -->
+<scopePacketTypes>
+    <enum Name="camscope_packet_type">
+        <enumVal Value="CAMSCOPE_BASE"          Number ="0" />
+        <enumVal Value="CAMSCOPE_SOFTWARE_BASE" Number ="1" />
+        <enumVal Value="CAMSCOPE_SYNC_BEGIN"    Number ="2" />
+        <enumVal Value="CAMSCOPE_SYNC_END"      Number ="3" />
+        <enumVal Value="CAMSCOPE_ASYNC_BEGIN"   Number ="4" />
+        <enumVal Value="CAMSCOPE_ASYNC_END"     Number ="5" />
+        <enumVal Value="CAMSCOPE_RESERVED"      Number ="0xFFFFFFFF" />
+    </enum>
+
+    <enum Name="camscope_event_name">
+        <enumVal Value="CAMSCOPE_MCT_SOF"         Number ="0"  Description="Mct_Sof" />
+        <enumVal Value="CAMSCOPE_MCT_SUP_PARAMS"  Number ="1"  Description="Mct_super_params" />
+        <enumVal Value="CAMSCOPE_MCT_SPEC_EVT"    Number ="2"  Description="Mct_special_event" />
+        <enumVal Value="CAMSCOPE_MCT_BUS_PROC"    Number ="3"  Description="Mct_process_bus_msg" />
+        <enumVal Value="CAMSCOPE_AFD"             Number ="4"  Description="AFD" />
+        <enumVal Value="CAMSCOPE_ASD"             Number ="5"  Description="ASD" />
+        <enumVal Value="CAMSCOPE_AEC"             Number ="6"  Description="AEC" />
+        <enumVal Value="CAMSCOPE_AWB"             Number ="7"  Description="AWB" />
+        <enumVal Value="CAMSCOPE_AF"              Number ="8"  Description="AF" />
+        <enumVal Value="CAMSCOPE_CPP"             Number ="9"  Description="CPP" />
+        <enumVal Value="CAMSCOPE_CPP_CAPTURE"     Number ="10" Description="CPP_Capture" />
+        <enumVal Value="CAMSCOPE_CPP_CLK_REQ"     Number ="11" Description="CPP_clock_request" />
+        <enumVal Value="CAMSCOPE_CPP_HOLDING"     Number ="12" Description="CPP_Holding_Time" />
+        <enumVal Value="CAMSCOPE_CPP_HW_ON"       Number ="13" Description="CPP_Hardware_On" />
+        <enumVal Value="CAMSCOPE_SNAPSHOT"        Number ="14" Description="Snapshot" />
+        <enumVal Value="CAMSCOPE_ISP_HW_UPDATE"   Number ="15" Description="ISP_Hardware_Update" />
+        <enumVal Value="CAMSCOPE_JPEG"            Number ="16" Description="JPEG" />
+        <enumVal Value="CAMSCOPE_FACEPROC"        Number ="17" Description="FaceProc" />
+        <enumVal Value="CAMSCOPE_SENSOR_PROCESS"  Number ="18" Description="Sensor_process_event" />
+        <enumVal Value="CAMSCOPE_FD_NUM_DETECTED" Number ="19" Description="FD_num_faces_detected" />
+    </enum>
+
+    <struct Name="camscope_base">
+        <var Type="uint32_t"         Name="packet_type" />
+        <var Type="uint32_t"         Name="size" />
+    </struct>
+
+    <struct Name="camscope_sw_base">
+        <var Type="camscope_base"    Name="base" />
+        <var Type="struct timeval"   Name="timestamp" />
+        <var Type="int32_t"          Name="process_id" />
+        <var Type="uint32_t"         Name="event_name" />
+    </struct>
+
+    <struct Name="camscope_timing">
+        <var Type="camscope_sw_base" Name="sw_base" />
+        <var Type="uint32_t"         Name="frame_id" />
+    </struct>
+
+    <struct Name="camscope_in_out_timing">
+        <var Type="camscope_sw_base" Name="sw_base" />
+        <var Type="struct timeval"   Name="out_timestamp" />
+        <var Type="uint32_t"         Name="frame_id" />
+    </struct>
+
+</scopePacketTypes>

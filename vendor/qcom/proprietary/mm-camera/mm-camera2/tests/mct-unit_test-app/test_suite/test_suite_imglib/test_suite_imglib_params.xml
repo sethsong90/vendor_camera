@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===========================================================================
+
+  Copyright (c) 2015 Qualcomm Technologies, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - Qualcomm Technologies, Inc.
+
+============================================================================-->
+<settings>
+<default>
+<common>
+    <hal_version value="0" type="cam_intf_parm_type_t">
+        <version value="1" type="int32_t"></version>
+    </hal_version>
+    <input_width value="640" type="dec"></input_width>
+    <input_height value="480" type="dec"></input_height>
+    <output_width type="dec">
+        <width value="640"></width>
+    </output_width>
+    <output_height type="dec">
+         <height value="480"></height>
+    </output_height>
+    <!-- possible formats: NV12, NV21-->
+    <out_format type="char">
+        <format value="YV12"></format>
+    </out_format>
+    <ref_img_width value="640" type="dec"></ref_img_width>
+    <ref_img_height value="480" type="dec"></ref_img_height>
+    <rotation value="0" type="degree">
+        <rotation value="0" type="degree"></rotation>
+    </rotation>
+    <flip value="0" type="int32_t"></flip>
+    <bestshot value="12" type="cam_intf_parm_type_t">
+        <mode value="1" type="cam_scene_mode_type"></mode>
+    </bestshot>
+    <effect value="11" type="cam_intf_parm_type_t">
+        <effect value="0" type="cam_effect_mode_type"></effect>
+    </effect>
+<!--    <effect value="9" type="cam_effect_mode_type"></effect> -->
+</common>
+<pproc>
+    <wavelet_denoise value="38" type="cam_intf_parm_type_t">
+        <denoise_enable value="1" type="int"></denoise_enable>
+        <process_plates value="0" type="cam_denoise_process_type_t"></process_plates>
+    </wavelet_denoise>
+    <!-- types: 1 0 - 2d, 1 - TNR-->
+    <denoise_type value="0" type="tm_denoise_e"></denoise_type>
+    <sharpness_ratio value="0" type="dec"></sharpness_ratio>
+    <win_first_line value="160" type="dec"></win_first_line>
+    <win_first_pixel value="120" type="dec"></win_first_pixel>
+    <win_width value="320" type="dec"></win_width>
+    <win_height value="240" type="dec"></win_height>
+    <use_crop value="0" type="boolean"></use_crop>
+</pproc>
+<stats_result>
+    <lux_idx value="0" type="float"></lux_idx>
+    <real_gain value="4.15234" type="float"></real_gain>
+    <line_count value="3144" type="dec"></line_count>
+    <exp_time value="0.033" type="float"></exp_time>
+</stats_result>
+</default>
+</settings>

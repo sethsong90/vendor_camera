@@ -1,0 +1,37 @@
+/**********************************************************************
+*  Copyright (c) 2013-2014, 2016 Qualcomm Technologies, Inc.
+*  All Rights Reserved.
+*  Confidential and Proprietary - Qualcomm Technologies, Inc.
+**********************************************************************/
+/* Face detection enable */
+.enable = 1,
+.min_face_adj_type = FD_FACE_ADJ_FIXED,
+.min_face_size = 300,
+.min_face_size_ratio = 0.1f,
+.max_face_size = 1000,
+.max_num_face_to_detect = 2,
+.angle_front = FD_ANGLE_ALL,
+.angle_half_profile = FD_ANGLE_NONE,
+.angle_full_profile = FD_ANGLE_NONE,
+.detection_mode = FD_CHROMATIX_MODE_MOTION_PROGRESS,
+.frame_skip = 5,
+.enable_smile_detection = 0,
+.enable_blink_detection = 0,
+.enable_gaze_detection = 0,
+.search_density_nontracking = 33,
+.search_density_tracking = 33,
+.direction = 0,
+.refresh_count = 2,
+.threshold = 520,
+.facial_parts_threshold = 500,
+.face_retry_count = 3,
+.head_retry_count = 3,
+.hold_count = 2,
+.lock_faces = 1,
+.move_rate_threshold = 8,
+.initial_frame_no_skip_cnt = 15,
+.ct_detection_mode = FD_CONTOUR_MODE_EYE,
+.stab_enable = 0,
+.enable_frame_batch_mode = FACE_FRAME_BATCH_MODE_OFF,
+.frame_batch_size = 1,
+.stats_filter_lock = 0,
